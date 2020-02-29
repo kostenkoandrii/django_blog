@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block admin-panel %}
+    <a href="{% url 'post_create_url' %}" class='btn btn-primary'>Create Post</a>
+    <a href="{% url 'tag_create_url' %}" class='btn btn-primary'>Create Tag</a>
+    <a href="{{ admin_object.get_update_url }}" class='btn btn-primary edit' style="{% if admin_object %}display: block;{% endif %}">Edit</a>
+    <a href="{{ admin_object.get_delete_url }}" class='btn btn-danger delete' style="{% if admin_object %}display: block;{% endif %}">Delete</a>
+{% endblock %}
